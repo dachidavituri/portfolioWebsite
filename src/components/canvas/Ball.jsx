@@ -1,18 +1,10 @@
-import React, { Suspense } from "react";
+import React, { Suspense } from "react"; 
 import { Canvas } from "@react-three/fiber";
-import {
-  Decal,
-  Float,
-  OrbitControls,
-  Preload,
-  useTexture,
-} from "@react-three/drei";
-
+import { Decal, Float, OrbitControls, Preload, useTexture } from "@react-three/drei";
 import CanvasLoader from "../Loader";
 
-const Ball = (props) => {
-  const [decal] = useTexture([props.imgUrl]);
-
+const Ball = ({ imgUrl }) => {
+  const [decal] = useTexture([imgUrl]);
   return (
     <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
       <ambientLight intensity={0.25} />
@@ -38,19 +30,18 @@ const Ball = (props) => {
 };
 
 const BallCanvas = ({ icon }) => {
-  const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+  const isMobile = /Mobi|Android/i.test(navigator.userAgent) || window.innerWidth <= 500;
 
   return (
     <Canvas
-      frameloop="always"                        
-      dpr={1} 
-      shadows={!isMobile}                        
+      frameloop={isMobile ? "demand" : "always"} 
+      dpr={isMobile ? 0.8 : 1.5} 
+      shadows={!isMobile}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} />
         <Ball imgUrl={icon} />
       </Suspense>
-
       <Preload all />
     </Canvas>
   );

@@ -1,7 +1,6 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
-
 import CanvasLoader from "../Loader";
 
 const Computers = ({ isMobile }) => {
@@ -10,18 +9,20 @@ const Computers = ({ isMobile }) => {
   return (
     <mesh>
       <hemisphereLight intensity={0.15} groundColor="black" />
-      <spotLight
-        position={[-20, 50, 10]}
-        angle={0.12}
-        penumbra={1}
-        intensity={1}
-        castShadow={!isMobile} 
-        shadow-mapSize={1024}
-      />
-      <pointLight intensity={1} />
+      {!isMobile && (
+        <spotLight
+          position={[-20, 50, 10]}
+          angle={0.12}
+          penumbra={1}
+          intensity={1}
+          castShadow
+          shadow-mapSize={256} // reduced for performance
+        />
+      )}
+      <pointLight intensity={0.5} />
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.7 : 0.75}
+        scale={isMobile ? 0.5 : 0.75} // smaller for mobile
         position={isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
         rotation={[-0.01, -0.2, -0.1]}
       />
@@ -36,22 +37,16 @@ const ComputersCanvas = () => {
     const mediaQuery = window.matchMedia("(max-width: 500px)");
     setIsMobile(mediaQuery.matches);
 
-    const handleMediaQueryChange = (event) => {
-      setIsMobile(event.matches);
-    };
-
-    mediaQuery.addEventListener("change", handleMediaQueryChange);
-
-    return () => {
-      mediaQuery.removeEventListener("change", handleMediaQueryChange);
-    };
+    const handleChange = (event) => setIsMobile(event.matches);
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
   return (
     <Canvas
-      frameloop="always"
+      frameloop={isMobile ? "demand" : "always"}
       shadows={!isMobile}
-      dpr={1}
+      dpr={isMobile ? 0.8 : 1.5}
       camera={{ position: [20, 3, 5], fov: 25 }}
     >
       <Suspense fallback={<CanvasLoader />}>
@@ -62,7 +57,6 @@ const ComputersCanvas = () => {
         />
         <Computers isMobile={isMobile} />
       </Suspense>
-
       <Preload all />
     </Canvas>
   );

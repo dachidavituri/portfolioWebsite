@@ -20,7 +20,7 @@ const Ball = (props) => {
       <mesh castShadow receiveShadow scale={2.75}>
         <icosahedronGeometry args={[1, 1]} />
         <meshStandardMaterial
-          color='#fff8eb'
+          color="#fff8eb"
           polygonOffset
           polygonOffsetFactor={-5}
           flatShading
@@ -38,11 +38,13 @@ const Ball = (props) => {
 };
 
 const BallCanvas = ({ icon }) => {
+  const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+
   return (
     <Canvas
-      frameloop='demand'
-      dpr={[1, 2]}
-      gl={{ preserveDrawingBuffer: true }}
+      frameloop="always"                        
+      dpr={1} 
+      shadows={!isMobile}                        
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} />

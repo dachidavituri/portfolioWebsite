@@ -9,9 +9,9 @@ const Computers = ({ isMobile }) => {
   return (
     <primitive
       object={computer.scene}
-      scale={isMobile ? 0.6 : 0.75} // smaller on mobile
-      position={isMobile ? [0, -1.5, -2] : [0, -3.25, -1.5]} // raise on mobile
-      rotation={[-0.01, -0.2, -0.1]} // same rotation for both
+      scale={isMobile ? 0.6 : 0.75}
+      position={isMobile ? [0, -1.5, -2] : [0, -3.25, -1.5]}
+      rotation={[-0.01, -0.2, -0.1]}
     />
   );
 };
@@ -33,13 +33,12 @@ const ComputersCanvas = () => {
   return (
     <Canvas
       frameloop="demand"
-      shadows={false} // disable shadows for mobile rendering issues
-      dpr={[1, 1]}
+      shadows={false} 
+      dpr={[1, 0,8]}
       camera={{
-        position: isMobile ? [10, 2, 5] : [20, 3, 5], // closer camera on mobile
-        fov: isMobile ? 35 : 25, // wider FOV for mobile
+        position: isMobile ? [10, 2, 5] : [20, 3, 5],
+        fov: isMobile ? 35 : 25, 
       }}
-      gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls

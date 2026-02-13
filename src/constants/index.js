@@ -31,6 +31,7 @@ import {
   githubProject,
   tipCalculator,
   linkedin,
+  donwload,
 } from "../assets";
 
 export const navLinks = [
@@ -57,6 +58,13 @@ export const navLinks = [
     title: "LinkedIn",
     href: "https://www.linkedin.com/in/dachi-davituri/",
     icon: linkedin,
+  },
+  {
+    id: "donwload-cv",
+    title: "Donwload CV",
+    href: "/Dachi Davituri Full-Stack Developer CV.pdf",
+    icon: donwload,
+    donwload: true,
   },
 ];
 

@@ -36,11 +36,13 @@ import travel from './Screenshot 2025-02-27 214830.png'
 import password from './nvjjyhvhqfwnjseojdgg.webp'
 import githubProject from './vnhorbifareii6uedrt4.webp'
 import tipCalculator from './so0b0hpmowz5ujjwbhkp.webp'
+import donwload from './download-icon-simple-vector-design-600nw-2469505835.webp'
 
 
 export {
   tipCalculator,
   password,
+  donwload,
   productStore,
   postgres,
   travel,

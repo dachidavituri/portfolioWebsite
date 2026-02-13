@@ -61,9 +61,10 @@ const Navbar = () => {
               {nav.href ? (
                 <a
                   href={nav.href}
-                  target="_blank"
+                  target={nav.donwload ? "_self" : "_blank"}
                   rel="noopener noreferrer"
                   className="flex items-center gap-2"
+                  download={nav.donwload ? true : undefined}
                 >
                   {nav.icon && (
                     <img src={nav.icon} alt={nav.title} className="w-5 h-5" />

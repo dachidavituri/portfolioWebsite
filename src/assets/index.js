@@ -37,6 +37,7 @@ import password from './nvjjyhvhqfwnjseojdgg.webp'
 import githubProject from './vnhorbifareii6uedrt4.webp'
 import tipCalculator from './so0b0hpmowz5ujjwbhkp.webp'
 import donwload from './download-icon-simple-vector-design-600nw-2469505835.webp'
+import geoSportify from './geosportify_logo.jpg'
 
 
 export {
@@ -48,6 +49,7 @@ export {
   travel,
   linkedin,
   programming,
+  geoSportify,
   tbc,
   leverx,
   revenue,

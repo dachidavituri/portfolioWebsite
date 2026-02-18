@@ -32,6 +32,7 @@ import {
   tipCalculator,
   linkedin,
   donwload,
+  geoSportify,
 } from "../assets";
 
 export const navLinks = [
@@ -149,6 +150,19 @@ const technologies = [
 ];
 
 const experiences = [
+  {
+    title: "Frontend Developer",
+    company_name: "GEOsportify",
+    icon: geoSportify,
+    iconBg: "#E6DEDD",
+    date: "Sep 2025 - Present",
+    points: [
+      "Developed responsive and user-friendly web interfaces using React, TypeScript, and Tailwind CSS.",
+      "Built reusable components and custom hooks to improve code maintainability and performance.",
+      "Integrated RESTful APIs with frontend applications and handled state management using modern React patterns.",
+      "Collaborated with designers and backend developers in an Agile environment to deliver high-quality features and bug fixes.",
+    ],
+  },
   {
     title: "Node js Developer",
     company_name: "LEVERX",

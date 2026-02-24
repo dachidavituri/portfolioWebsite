@@ -33,6 +33,7 @@ import {
   linkedin,
   donwload,
   geoSportify,
+  typing,
 } from "../assets";
 
 export const navLinks = [
@@ -307,6 +308,36 @@ const projects = [
     image: travel,
     live_link: "https://my-travel-six.vercel.app/ka/home",
     source_code_link: "https://github.com/dachidavituri/myTravel",
+  },
+  {
+    name: "Typing Test App",
+    description:
+      "Typing Test App is an interactive web application that helps users improve typing speed and accuracy through real-time feedback, difficulty levels, and customizable sessions. It features a keyboard heatmap, typing history charts, and shareable result cards to visualize performance and track progress over time.",
+    tags: [
+      {
+        name: "React",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Tailwind",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "Typescript",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Chart.js",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Canvas Confetti",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: typing,
+    live_link: "https://typing-speed-test-silk-sigma.vercel.app/",
+    source_code_link: "https://github.com/dachidavituri/Typing-Speed-Test",
   },
   {
     name: "Password Generator",

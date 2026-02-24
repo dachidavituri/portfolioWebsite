@@ -38,11 +38,13 @@ import githubProject from './vnhorbifareii6uedrt4.webp'
 import tipCalculator from './so0b0hpmowz5ujjwbhkp.webp'
 import donwload from './download-icon-simple-vector-design-600nw-2469505835.webp'
 import geoSportify from './geosportify_logo.jpg'
+import typing from '../assets/evbz8invcnftebjuer3f.webp'
 
 
 export {
   tipCalculator,
   password,
+  typing,
   donwload,
   productStore,
   postgres,

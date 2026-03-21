@@ -64,7 +64,7 @@ export const navLinks = [
   {
     id: "donwload-cv",
     title: "Donwload CV",
-    href: "/public/Dachi Davituri Frontend Developer CV.pdf",
+    href: "/Dachi Davituri Frontend Developer CV.pdf",
     icon: donwload,
     donwload: true,
   },
